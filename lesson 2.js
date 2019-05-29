@@ -5,7 +5,7 @@
  * [ 'vanilla js', 'angular', 'react', 'vue', 'jQuery', 'knockout', 'ember']
  * 
  * - while loop (previous example)
- * 
+ *
  * - do while
  * 
  * - continue, break
@@ -13,9 +13,19 @@
  * - - break on first found element
  */
 
+  const arr = [11, 23, 34, 54, 'sove value', 89, 92]
+
+ for (let i = 0; i < arr.length; i++) {
+   const item = arr[i];
+   
+   console.log(item);
+ }
+
  /**
   * SCOPING
-  * what is scoping
+  * - what is scoping
+  * - modules
+  * - object factory
   */
 
   var a = 'number 1';
@@ -27,7 +37,7 @@
 
     function second() {
       var c = ' number 3';
-      // third();
+      // third(); ==
       
       console.log(a + b + c)
     }
@@ -38,6 +48,13 @@
 
     console.log(a + b + c + d)
   }
+
+
+/**
+ * Challenge
+ * http://jsfiddle.net/znhjc1mu/
+ */
+
 
 /**
  * ES6 - history
@@ -69,16 +86,18 @@
  */
 
 /** 
- * Inheritance && prototype cahin
+ * Inheritance && prototype chain
  * 
  * 
  * 
  */
 
  /** 
- * - prototypes
- * - array iterations
- * 
- * 
- * - scoping, scope chain
+ * __array iterations__
+ * - forEach
+ * - map
+ * - some
+ * - every
+ * - reduce
+ * - find
  */
