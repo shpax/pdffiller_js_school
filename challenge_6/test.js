@@ -1,30 +1,39 @@
 const expect = chai.expect
 
 describe('Animals Zoo', () => {
-  it('createAnimal', function(){
-    expect(obj.bills).to.be.not.null;
-    expect(obj.finalValues).to.be.null;
-    expect(obj.tips).to.be.null;
+  it('createAnimal should create valid animal', function(){
+    const animal = createAnimal('lama', 10, 45);
+    
+    expect(animal.name).to.be.equal('lama');
+    expect(animal.lifespan).to.be.equal(10);
+    expect(animal.costPerDay).to.be.equal(45);
+    expect(animal.lifetimeCost).to.be.equal(45 * 365 * 10);
   });
 
-  it('can calc tips & payments with calcPayments', () => {
-    obj.calcTipsAndValues();
+  it('getTotalCost should calculate valid total cost', () => {
+    const zoo = [
+      createAnimal('a1', 30, 100),
+      createAnimal('a2', 10, 40),
+      createAnimal('a3', 10, 25),
+    ]
+    const days = 4;
 
-    const { tips, finalValues } = calcTipsAndValuesChecker(obj.bills)
-    expect(obj.finalValues).to.have.members(finalValues);
-    expect(obj.tips).to.have.members(tips);
+    const totalCost = zoo.reduce((sum, animal) => sum + animal.costPerDay * days, 0);
+
+    expect(getTotalCost(zoo, days)).to.be.equal(totalCost);
   })
 
 
-  it('can calc average tips using only tips array', () => {
-    const averageTip = obj.getAverageTip();
+  it('getMostExpensiveAnimal should return valid znimal', () => {
+    const zoo = [
+      createAnimal('a1', 30, 100),
+      createAnimal('a2', 10, 40),
+      createAnimal('a3', 10, 25),
+    ];
 
-    try {
-      getAverageTip.call({ tips: [1,2,3] });
-    } catch (e) {
-      throw new Error('you should use only tips array');
-    }
+    const mostExpensiveAnimal = getMostExpensiveAnimal(zoo);
 
-    expect(averageTip).to.have.equal(obj.tips.reduce((sum, t) => sum + t, 0) / obj.tips.length);
+    expect(mostExpensiveAnimal).to.be.an.instanceof(Object);
+    expect(mostExpensiveAnimal.name).to.be.equal('a1');
   })
 });

@@ -61,22 +61,37 @@
 
 /**
  * __ES6 features__
- * - let,const
+ * - let, const
  * - destructuring (with renaming), composition
  * - arrow functions
  * 
  * - classes
  */
 
- /** 
-  * __Challenge 1 via ES6__ 
-  */
+ function createPet(name, size) {
+   return {
+     name: name,
+     size: size,
+   }
+ }
+
 
  /**
   * __Scoping & Closures__
   * - what is scoping
   * - modules
   * - object factory
+  * - block scope, var vs let
+  */
+
+ var i = 5;
+ for (var i = 0; i < 10; i++) {
+   // some statements
+ }
+ // Here i is ?
+
+ /** 
+  * __Challenge 1 via ES6__ 
   */
 
   var a = 'number 1';
