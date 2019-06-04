@@ -13,13 +13,21 @@
  * - - break on first found element
  */
 
-  const arr = [11, 23, 34, 54, 'sove value', 89, 92]
+const frameworks = [ 'vanilla js', 'angular', 'react', 'vue', 'jQuery', 'knockout', 'ember']
+ 
+console.log(
+  frameworks.filter(f => f.charAt(0) === 'r')
+)
+ 
 
- for (let i = 0; i < arr.length; i++) {
-   const item = arr[i];
+//   const arr = [11, 23, 34, 54, 'sove value', 89, 92]
+// console.log(arr);
+
+//  for (let i = 0; i < arr.length; i++) {
+//    const item = arr[i];
    
-   console.log(item);
- }
+//    console.log(item);
+//  }
 
  /** 
  * __Array iterations__
@@ -29,12 +37,21 @@
  * - every
  * - reduce
  * - find
+ * - filter
  */
+
+//  var arr = ['Haytham', 'Ezio', 'Altair', 'Connor', 'Edward']
+ 
+//  var names = arr.filter(function(e) {
+//    return e !== 'Ezio';
+//  })
+
+// console.log(names);
 
 
 /**
  * __Challenge 1__ - array methods
- * http://jsfiddle.net/shpax/27mf1rjn/14/
+ * http://jsfiddle.net/shpax/27mf1rjn/17/
  */
 
 
@@ -65,15 +82,22 @@
  * - destructuring (with renaming), composition
  * - arrow functions
  * 
- * - classes
  */
 
- function createPet(name, size) {
+ function createPerson(name, age) {
+   var birthYear = 2019 - age;
    return {
-     name: name,
-     size: size,
+     name,
+     age,
+     birthYear,
    }
  }
+
+
+
+const myFunc = text => {
+  console.log(text);
+}
 
 
  /**
@@ -103,20 +127,21 @@
 
     function second() {
       var c = ' number 3';
-      // third(); ==
+      third();
       
       console.log(a + b + c)
     }
   }
 
   function third() {
-    var c = ' number 4';
+    var d = ' number 4';
 
-    // console.log(a + b + c + d)
+    console.log(a + b + c + d)
   }
 
 
 /** 
  * __Challenge 2__
  * Animal Zoo
+ * (https://jsfiddle.net/shpax/vomda52x/10/)
  */
